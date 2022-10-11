@@ -14,6 +14,7 @@ if [ x$ACTION = x"copy" ]; then
     cp -r /workspace/code/BDTK/cider ./velox-plugin
     cp -r /workspace/code/BDTK/cider-velox ./velox-plugin
     cp -r /workspace/code/BDTK/thirdparty ./velox-plugin
+    rm -rf ./velox-plugin/thirdparty/duckdb/data
     cp -r /workspace/code/BDTK/cmake-modules ./velox-plugin
     cp /workspace/code/BDTK/CMakeLists.txt ./velox-plugin
     cp /workspace/code/BDTK/Makefile ./velox-plugin

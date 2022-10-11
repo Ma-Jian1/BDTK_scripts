@@ -126,9 +126,6 @@ public class HiveExternalWorkerQueryRunner
                                 "deprecated.legacy-date-timestamp-to-varchar-coercion", "true"),
                         "sql-standard",
                         // ImmutableMap.of(
-                        //         "hive.parquet.optimized-writer.enabled", "true",
-                        //         "hive.parquet.writer.block-size", "234MB",
-                        //         "hive.parquet.writer.page-size", "11MB",
                         //         "hive.storage-format", storageFormat,
                         //         // "hive.compression-codec", "NONE",
                         //         // "hive.compression-codec", "SNAPPY",
@@ -140,7 +137,8 @@ public class HiveExternalWorkerQueryRunner
                                 .put("hive.parquet.writer.block-size", "234MB")
                                 .put("hive.parquet.writer.page-size", "11MB")
                                 .put("hive.storage-format", storageFormat)
-                                .put("hive.compression-codec", "GZIP")
+                                // .put("hive.compression-codec", "GZIP")
+                                .put("hive.compression-codec", "SNAPPY")
                                 .put("hive.pushdown-filter-enabled", pushdownFilter)
                                 // .put("hive.parquet.pushdown-filter-enabled", pushdownFilter)
                                 .build(),
@@ -197,8 +195,8 @@ public class HiveExternalWorkerQueryRunner
                 ImmutableMap.of(
                         "hive.storage-format", storageFormat,
                         // "hive.compression-codec", "NONE",
-                        // "hive.compression-codec", "SNAPPY",
-                        "hive.compression-codec", "GZIP",
+                        // "hive.compression-codec", "GZIP",
+                        "hive.compression-codec", "SNAPPY",
                         "hive.pushdown-filter-enabled", pushdownFilter,
                         "hive.parquet.pushdown-filter-enabled", pushdownFilter),
                 workerCount,
